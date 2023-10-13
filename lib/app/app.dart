@@ -34,14 +34,14 @@ class _AppState extends State<App> {
         textDirection: languageService.getLocale() == Locale('ar', 'SA')
             ? TextDirection.rtl
             : TextDirection.ltr,
-        title: 'Flutter GetX Template',
+        title: 'Workiom Flutter Test',
         locale: languageService.getLocale(),
         fallbackLocale: languageService.getLocale(),
         builder: BotToastInit(),
         translations: AppTranslations(),
         scrollBehavior: ScrollBehavior().copyWith(overscroll: false),
         theme: ThemeData(
-          fontFamily: 'VIP-Hakm',
+          fontFamily: 'Rubik',
           primaryColor: AppColors.orangeColor,
         ),
         debugShowCheckedModeBanner: false,

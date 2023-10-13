@@ -76,6 +76,13 @@ flutter:
     - assets/images/
     - assets/animations/
 
+  fonts:
+    - family: Rubik
+      fonts:
+        - asset: assets/fonts/Rubik_Regular_400.ttf
+          weight: 400
+        - asset: assets/fonts/Rubik_Medium_500.ttf
+          weight: 500
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
