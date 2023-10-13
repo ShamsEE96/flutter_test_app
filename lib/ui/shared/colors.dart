@@ -73,14 +73,33 @@ class AppColors {
   static const Color redColor = Color.fromRGBO(230, 69, 82, 1);
   static const Color notificationRedColor = Color.fromRGBO(255, 0, 0, 1);
 
+  //!==========App Colors=============
+
+  static const Color uiWhiteColor = Color.fromRGBO(255, 255, 255, 1);
+  static const Color uiWhiteColorWith60Opacity =
+      Color.fromRGBO(255, 255, 255, 0.60);
+  static const Color uiWhiteColorWith15Opacity =
+      Color.fromRGBO(255, 255, 255, 0.15);
+
+  static const Color brandAzureColor = Color.fromRGBO(78, 134, 247, 1);
+  static const Color brandMangoColor = Color.fromRGBO(245, 192, 68, 1);
+  static const Color brandSpringGreenColor = Color.fromRGBO(91, 215, 126, 1);
+  static const Color uiRedCTAColor = Color.fromRGBO(255, 119, 111, 1);
+  static const Color uiTypographyPrimaryColor = Color.fromRGBO(14, 15, 18, 1);
+  static const Color uiTypographySecondaryColor = Color.fromRGBO(85, 85, 85, 1);
+  static const Color uiTypographyDisableColor =
+      Color.fromRGBO(181, 181, 181, 1);
+  static const Color uiTypographyGreyDarkerColor =
+      Color.fromRGBO(214, 214, 214, 1);
+  static const Color uiTypographyGreyLighterColor =
+      Color.fromRGBO(244, 244, 244, 1);
+  static const Color uiTypographyPlaceholderColor =
+      Color.fromRGBO(116, 116, 116, 1);
   static const Color fillColorButtonIcon = Color.fromRGBO(0, 92, 156, 1);
   static const Color fillColorNavBar = Color.fromRGBO(238, 238, 238, 1);
   static const Color borderColorButtonIcon = Color.fromRGBO(112, 112, 112, 1);
   static const Color dividerColor = Color.fromRGBO(155, 164, 181, 1);
-  static const Color primaryFontColor = Color.fromRGBO(33, 42, 62, 1);
-  static const Color secondaryFontColor = Color.fromRGBO(147, 147, 147, 1);
   static const Color cyanFontColor = Color.fromRGBO(113, 139, 198, 1);
-  static const Color placeholderFontColor = Color.fromRGBO(193, 193, 193, 1);
   static const Color dropShadowColor = Color.fromRGBO(0, 0, 0, 0.16);
   static const Color navItemNotActiveColor = Color.fromRGBO(0, 92, 156, 1);
   static const Color drawerDividerColor = Color.fromRGBO(213, 213, 213, 1);
