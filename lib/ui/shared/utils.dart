@@ -11,6 +11,7 @@ import 'package:flutter_template/ui/shared/custom_widgets/cta_button.dart';
 import 'package:flutter_template/ui/shared/custom_widgets/custom_popup_with_blur.dart';
 import 'package:flutter_template/ui/shared/custom_widgets/custom_text.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 void onClickedShowDialog(
   BuildContext context,
@@ -318,10 +319,10 @@ void showImagePickerBottomSheet({
                 color: AppColors.fillColorButtonIcon,
               ),
               title: CustomText(
-                textType: TextStyleType.SUBTITLE,
+                textType: TextStyleType.HEADLINE_REG,
                 text: tr('image_picker_camera'),
                 textAlign: TextAlign.start,
-                color: AppColors.primaryFontColor,
+                color: AppColors.uiTypographyPrimaryColor,
               ),
               onTap: () {
                 FileUtil.pickFile(
@@ -339,10 +340,10 @@ void showImagePickerBottomSheet({
                 color: AppColors.fillColorButtonIcon,
               ),
               title: CustomText(
-                textType: TextStyleType.SUBTITLE,
+                textType: TextStyleType.HEADLINE_REG,
                 text: tr('image_picker_gallery'),
                 textAlign: TextAlign.start,
-                color: AppColors.primaryFontColor,
+                color: AppColors.uiTypographyPrimaryColor,
               ),
               onTap: () {
                 FileUtil.pickFile(
@@ -559,7 +560,7 @@ void showDeleteAccountBottomSheet({
               ],
             ),
             CustomText(
-              textType: TextStyleType.TITLE,
+              textType: TextStyleType.TITLE_2,
               text: tr('general_delete_account_warrning'),
               color: AppColors.redColor,
               // fontWeight: FontWeight.w900,
@@ -569,7 +570,7 @@ void showDeleteAccountBottomSheet({
             CustomText(
               textType: TextStyleType.BODY,
               text: tr('general_delete_account_warrning_massege'),
-              color: AppColors.primaryFontColor,
+              color: AppColors.uiTypographyPrimaryColor,
               // fontWeight: FontWeight.w500,
               // fontSize: screenHeightPercent(40, context),
             ),
@@ -615,52 +616,51 @@ void showDeleteAccountBottomSheet({
   );
 }
 
-// void showCheckConnectionDialog({
-//   // required bool isLoading,
-//   // required Function? onTap,
-//   required Widget widget,
-//   required BuildContext context,
-// }) {
-//   // RxBool loading = isLoading.obs;
-//   Get.dialog(
-//     CustomPopupWithBlurWidget(
-//       customBlurChildType: CustomBlurChildType.DIALOUG,
-//       child: Container(
-//         width: screenHeightPercent(2, context),
-//         height: screenHeightPercent(2, context),
-//         decoration: BoxDecoration(
-//           color: AppColors.whiteColor,
-//           borderRadius: BorderRadiusDirectional.all(
-//             Radius.circular(20),
-//           ),
-//         ),
-//         child: Column(
-//           children: [
-//             Lottie.asset(
-//               'assets/animations/animation_no_connection.json',
-//               width: screenWidthPercent(1.25, context),
-//               height: screenHeightPercent(3.5, context),
-//             ),
-//             verSpace(40, context),
-//             Material(
-//               color: AppColors.whiteColor,
-//               child: CustomText(
-//                 textType: TextStyleType.BODY,
-//                 text: tr("check_connection"),
-//                 color: AppColors.primaryFontColor,
-//               ),
-//             ),
-//             verSpace(40, context),
-//             Padding(
-//               padding: EdgeInsets.symmetric(
-//                 horizontal: screenWidthPercent(10, context),
-//               ),
-//               child: widget,
-//             ),
-//           ],
-//         ),
-//       ),
-//     ),
-//   );
-// }
-
+void showCheckConnectionDialog({
+  // required bool isLoading,
+  // required Function? onTap,
+  required Widget widget,
+  required BuildContext context,
+}) {
+  // RxBool loading = isLoading.obs;
+  Get.dialog(
+    CustomPopupWithBlurWidget(
+      customBlurChildType: CustomBlurChildType.DIALOUG,
+      child: Container(
+        width: screenHeightPercent(2, context),
+        height: screenHeightPercent(2, context),
+        decoration: BoxDecoration(
+          color: AppColors.whiteColor,
+          borderRadius: BorderRadiusDirectional.all(
+            Radius.circular(20),
+          ),
+        ),
+        child: Column(
+          children: [
+            Lottie.asset(
+              'assets/animations/animation_no_connection.json',
+              width: screenWidthPercent(1.25, context),
+              height: screenHeightPercent(3.5, context),
+            ),
+            verSpace(40, context),
+            Material(
+              color: AppColors.whiteColor,
+              child: CustomText(
+                textType: TextStyleType.BODY,
+                text: tr("check_connection"),
+                color: AppColors.uiTypographyPrimaryColor,
+              ),
+            ),
+            verSpace(40, context),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: screenWidthPercent(10, context),
+              ),
+              child: widget,
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}
