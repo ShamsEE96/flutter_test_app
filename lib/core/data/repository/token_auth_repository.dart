@@ -7,6 +7,7 @@ import 'package:flutter_template/core/data/network/endpoints/token_auth_endpoint
 import 'package:flutter_template/core/data/network/network_config.dart';
 import 'package:flutter_template/core/data/network/network_constants.dart';
 import 'package:flutter_template/core/enums/request_type_enum.dart';
+import 'package:flutter_template/core/utils/general_utils.dart';
 import 'package:flutter_template/core/utils/network_util.dart';
 
 class TokenAuthRepository {
@@ -24,7 +25,7 @@ class TokenAuthRepository {
           type: RequestType.POST,
         ),
         body: {
-          "ianaTimeZone": "Europe/Istanbul",
+          "ianaTimeZone": currentTimeZone,
           "password": password.trim(),
           "rememberClient": false,
           "returnUrl": null,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/core/enums/signup_parts_enum.dart';
 import 'package:flutter_template/core/translation/translation_service.dart';
 import 'package:flutter_template/core/utils/general_utils.dart';
 import 'package:flutter_template/core/utils/string_utils.dart';
@@ -115,7 +116,8 @@ class SignupContentPart02 extends StatelessWidget {
                 controller.signupLastNameController.text =
                     controller.signupLastNameController.text.trim();
                 if (controller.signupFormKey2.currentState!.validate()) {
-                  controller.checkIsWorkspaceNameAvailable();
+                  // controller.checkIsWorkspaceNameAvailable();
+                  controller.signupPartsEnum.value = SignupPartsEnum.SUCCESS;
                   // controller.signup();
                   // controller.signupPartsEnum.value = SignupPartsEnum.SUCCESS;
                 }

@@ -17,6 +17,7 @@ class _CustomBasicViewState extends State<CustomBasicView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.uiWhiteColor,
       body: widget.body,
     );

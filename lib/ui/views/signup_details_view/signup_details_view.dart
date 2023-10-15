@@ -33,47 +33,86 @@ class _SignupDetailsViewState extends State<SignupDetailsView> {
       child: CustomBasicView(
         body: Obx(
           () {
-            return ListView(
+            return Padding(
               padding: EdgeInsetsDirectional.symmetric(
-                vertical: screenHeightPercent(20, context),
+                vertical: screenHeightPercent(30, context),
                 horizontal: screenWidthPercent(20, context),
               ),
-              children: [
-                if (controller.signupPartsEnum.value !=
-                    SignupPartsEnum.SUCCESS) ...[
-                  CustomBackButton(
-                    customBackButtonTypeEnum: CustomBackButtonTypeEnum.NORMAL,
-                    onTap: () {
-                      Get.offAll(() => SignupView());
-                    },
+              child: SingleChildScrollView(
+                child: SizedBox(
+                  width: screenWidthPercent(1, context),
+                  height: screenHeightPercent(1.1, context),
+                  child: Column(
+                    children: [
+                      if (controller.signupPartsEnum.value !=
+                          SignupPartsEnum.SUCCESS) ...[
+                        Padding(
+                          padding: EdgeInsetsDirectional.only(
+                            top: screenHeightPercent(100, context),
+                          ),
+                          child: CustomBackButton(
+                            customBackButtonTypeEnum:
+                                CustomBackButtonTypeEnum.NORMAL,
+                            onTap: () {
+                              Get.offAll(() => SignupView());
+                            },
+                          ),
+                        ),
+                        verSpace(60, context),
+                        CustomHeadlineWithTitle(
+                          title: tr("singup_view_title_2"),
+                          headline: tr("singup_view_headline_1"),
+                        ),
+                      ],
+                      Spacer(),
+                      ListView(
+                        shrinkWrap: true,
+                        padding: EdgeInsetsDirectional.all(0),
+                        physics: NeverScrollableScrollPhysics(),
+                        children: [
+                          // if (controller.signupPartsEnum.value !=
+                          //     SignupPartsEnum.SUCCESS) ...[
+                          //   CustomBackButton(
+                          //     customBackButtonTypeEnum:
+                          //         CustomBackButtonTypeEnum.NORMAL,
+                          //     onTap: () {
+                          //       Get.offAll(() => SignupView());
+                          //     },
+                          //   ),
+                          //   verSpace(60, context),
+                          //   CustomHeadlineWithTitle(
+                          //     title: tr("singup_view_title_2"),
+                          //     headline: tr("singup_view_headline_1"),
+                          //   ),
+                          // ],
+                          // verSpace(9, context),
+                          if (controller.signupPartsEnum.value ==
+                              SignupPartsEnum.EMAIL) ...[
+                            // verSpace(9, context),
+                            SignupContentPart01(controller: controller),
+                            // verSpace(7, context),
+                          ],
+                          if (controller.signupPartsEnum.value ==
+                              SignupPartsEnum.WORKSPACE) ...[
+                            // verSpace(9, context),
+                            SignupContentPart02(controller: controller),
+                            // verSpace(7, context),
+                          ],
+                          if (controller.signupPartsEnum.value ==
+                              SignupPartsEnum.SUCCESS) ...[
+                            // verSpace(3, context),
+                            verSpace(60, context),
+                            SignupContentPart03(controller: controller),
+                            // verSpace(2.5, context),
+                          ],
+                        ],
+                      ),
+                      Spacer(),
+                      CustomFooterSymbol(),
+                    ],
                   ),
-                  verSpace(60, context),
-                  CustomHeadlineWithTitle(
-                    title: tr("singup_view_title_2"),
-                    headline: tr("singup_view_headline_1"),
-                  ),
-                ],
-                // verSpace(9, context),
-                if (controller.signupPartsEnum.value ==
-                    SignupPartsEnum.EMAIL) ...[
-                  verSpace(9, context),
-                  SignupContentPart01(controller: controller),
-                  verSpace(7, context),
-                ],
-                if (controller.signupPartsEnum.value ==
-                    SignupPartsEnum.WORKSPACE) ...[
-                  verSpace(9, context),
-                  SignupContentPart02(controller: controller),
-                  verSpace(7, context),
-                ],
-                if (controller.signupPartsEnum.value ==
-                    SignupPartsEnum.SUCCESS) ...[
-                  verSpace(3, context),
-                  SignupContentPart03(controller: controller),
-                  verSpace(2.5, context),
-                ],
-                CustomFooterSymbol(),
-              ],
+                ),
+              ),
             );
           },
         ),

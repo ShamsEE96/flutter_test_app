@@ -45,7 +45,7 @@ class _AppState extends State<App> {
         fallbackLocale: languageService.getLocale(),
         builder: BotToastInit(),
         translations: AppTranslations(),
-        // scrollBehavior: ScrollBehavior().copyWith(overscroll: false),
+        scrollBehavior: ScrollBehavior().copyWith(overscroll: false),
         theme: ThemeData(
           fontFamily: 'Rubik',
           primaryColor: AppColors.orangeColor,

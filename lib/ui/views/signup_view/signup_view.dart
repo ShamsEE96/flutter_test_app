@@ -26,88 +26,126 @@ class _SignupViewState extends State<SignupView> {
     // SignupController controller = Get.put(SignupController());
 
     return CustomBasicView(
-      body: ListView(
+      body: Padding(
         padding: EdgeInsetsDirectional.symmetric(
-          vertical: screenHeightPercent(20, context),
+          vertical: screenHeightPercent(30, context),
           horizontal: screenWidthPercent(20, context),
         ),
-        children: [
-          CustomBackButton(
-            customBackButtonTypeEnum: CustomBackButtonTypeEnum.NORMAL,
-            showText: true,
-            text: tr("general_sign_in"),
-            onTap: () {},
-          ),
-          verSpace(60, context),
-          CustomHeadlineWithTitle(
-            title: tr("singup_view_title_1"),
-            headline: tr("singup_view_headline_1"),
-          ),
-          verSpace(7, context),
-          CtaButton(
-            buttonTypeEnum: ButtonTypeEnum.NORMAL,
-            titleInCaps: false,
-            title: tr("singup_view_with_google"),
-            centerSvgPath: 'assets/svgs/ic_google.svg',
-            fillColor: AppColors.uiTypographyGreyLighterColor,
-            textColor: AppColors.uiTypographyPrimaryColor,
-            onTap: () {},
-          ),
-          Padding(
-            padding: EdgeInsetsDirectional.symmetric(
-              vertical: screenHeightPercent(30, context),
-            ),
-            child: CustomText(
-              textType: TextStyleType.CAPTION_1,
-              text: tr("general_or"),
-            ),
-          ),
-          CtaButton(
-            buttonTypeEnum: ButtonTypeEnum.NORMAL,
-            titleInCaps: false,
-            title: tr("singup_view_with_email"),
-            endSvgPath: 'assets/svgs/ic_enter.svg',
-            onTap: () {
-              Get.to(() => SignupDetailsView());
-            },
-          ),
-          verSpace(90, context),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CustomText(
-                textType: TextStyleType.FOOTNOTE,
-                text: "${tr("singup_view_footer_line1")} ",
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsetsDirectional.only(
+                top: screenHeightPercent(100, context),
               ),
-              CustomTextButton(
-                title: "${tr("singup_view_footer_line2_terms")}",
+              child: CustomBackButton(
+                customBackButtonTypeEnum: CustomBackButtonTypeEnum.NORMAL,
+                showText: true,
+                text: tr("general_sign_in"),
                 onTap: () {},
               ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CustomText(
-                textType: TextStyleType.FOOTNOTE,
-                text: "${tr("singup_view_footer_line2_and")} ",
-              ),
-              CustomTextButton(
-                title: "${tr("singup_view_footer_line2_policy")}",
-                onTap: () {},
-              ),
-            ],
-          ),
-          verSpace(6, context),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              CustomLanguageDropdown(),
-              verSpace(40, context),
-              CustomFooterSymbol(),
-            ],
-          ),
-        ],
+            ),
+            verSpace(60, context),
+            CustomHeadlineWithTitle(
+              title: tr("singup_view_title_1"),
+              headline: tr("singup_view_headline_1"),
+            ),
+            Spacer(),
+            ListView(
+              shrinkWrap: true,
+              padding: EdgeInsetsDirectional.all(0),
+              children: [
+                // Padding(
+                //   padding: EdgeInsetsDirectional.only(
+                //       top: screenHeightPercent(100, context)),
+                //   child: CustomBackButton(
+                //     customBackButtonTypeEnum: CustomBackButtonTypeEnum.NORMAL,
+                //     showText: true,
+                //     text: tr("general_sign_in"),
+                //     onTap: () {},
+                //   ),
+                // ),
+                // verSpace(60, context),
+                // CustomHeadlineWithTitle(
+                //   title: tr("singup_view_title_1"),
+                //   headline: tr("singup_view_headline_1"),
+                // ),
+                // verSpace(7, context),
+                CtaButton(
+                  buttonTypeEnum: ButtonTypeEnum.NORMAL,
+                  titleInCaps: false,
+                  title: tr("singup_view_with_google"),
+                  centerSvgPath: 'assets/svgs/ic_google.svg',
+                  fillColor: AppColors.uiTypographyGreyLighterColor,
+                  textColor: AppColors.uiTypographyPrimaryColor,
+                  onTap: () {},
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.symmetric(
+                    vertical: screenHeightPercent(30, context),
+                  ),
+                  child: CustomText(
+                    textType: TextStyleType.CAPTION_1,
+                    text: tr("general_or"),
+                  ),
+                ),
+                CtaButton(
+                  buttonTypeEnum: ButtonTypeEnum.NORMAL,
+                  titleInCaps: false,
+                  title: tr("singup_view_with_email"),
+                  endSvgPath: 'assets/svgs/ic_enter.svg',
+                  onTap: () {
+                    Get.to(() => SignupDetailsView());
+                  },
+                ),
+                verSpace(90, context),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CustomText(
+                      textType: TextStyleType.FOOTNOTE,
+                      text: "${tr("singup_view_footer_line1")} ",
+                    ),
+                    CustomTextButton(
+                      title: "${tr("singup_view_footer_line2_terms")}",
+                      onTap: () {},
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CustomText(
+                      textType: TextStyleType.FOOTNOTE,
+                      text: "${tr("singup_view_footer_line2_and")} ",
+                    ),
+                    CustomTextButton(
+                      title: "${tr("singup_view_footer_line2_policy")}",
+                      onTap: () {},
+                    ),
+                  ],
+                ),
+                // verSpace(6, context),
+                // Column(
+                //   mainAxisAlignment: MainAxisAlignment.end,
+                //   children: [
+                //     CustomLanguageDropdown(),
+                //     verSpace(40, context),
+                //     CustomFooterSymbol(),
+                //   ],
+                // ),
+              ],
+            ),
+            Spacer(),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                CustomLanguageDropdown(),
+                verSpace(40, context),
+                CustomFooterSymbol(),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
