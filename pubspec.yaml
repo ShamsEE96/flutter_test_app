@@ -49,6 +49,7 @@ dependencies:
   intl: ^0.18.1
   image_picker: ^0.8.7+5
   lottie: ^2.6.0
+  flutter_timezone: ^1.0.8
 
 dev_dependencies:
   flutter_test:

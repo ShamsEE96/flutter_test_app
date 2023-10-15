@@ -1,16 +1,44 @@
-// import 'dart:developer';
+import 'dart:developer';
 
-// import 'package:dartz/dartz.dart';
-// import 'package:fluttergetxframework/core/data/models/apis/token_info.dart';
-// import 'package:fluttergetxframework/core/data/models/common_response.dart';
-// import 'package:fluttergetxframework/core/data/network/endpoints/auth_endpoints.dart';
-// import 'package:fluttergetxframework/core/data/network/network_config.dart';
-// import 'package:fluttergetxframework/core/enums/auth_grant_type.dart';
-// import 'package:fluttergetxframework/core/enums/request_type_enum.dart';
-// import 'package:fluttergetxframework/core/utils/general_utils.dart';
-// import 'package:fluttergetxframework/core/utils/network_util.dart';
+import 'package:dartz/dartz.dart';
+import 'package:flutter_template/core/data/models/apis/login_info_model.dart';
+import 'package:flutter_template/core/data/models/common_response.dart';
+import 'package:flutter_template/core/data/network/endpoints/session_endpoints.dart';
+import 'package:flutter_template/core/data/network/network_config.dart';
+import 'package:flutter_template/core/enums/request_type_enum.dart';
+import 'package:flutter_template/core/utils/network_util.dart';
 
-// class UserRepository {
+class SessionRepository {
+  Future<Either<String, LoginInformationModel>>
+      getCurrentLoginInformations() async {
+    try {
+      return NetworkUtil.sendRequest(
+        type: RequestType.GET,
+        url: SessionPoints.getCurrentLoginInformations,
+        headers: NetworkConfig.getHeaders(
+          needAuth: true,
+          type: RequestType.GET,
+        ),
+      ).then(
+        (response) {
+          CommonResponse commonResponse =
+              CommonResponse<dynamic>.fromJson(response);
+
+          if (commonResponse.getStatus) {
+            return Right(
+              LoginInformationModel.fromJson(commonResponse.getData),
+            );
+          } else {
+            return Left(commonResponse.message ?? commonResponse.errors ?? '');
+          }
+        },
+      );
+    } catch (e) {
+      log(e.toString());
+
+      return Left(e.toString());
+    }
+  }
 //   static Map<String, String> headers = {
 //     'Content-Type': 'application/json',
 //     'Access-Control-Allow-Origin': '*',
@@ -77,4 +105,4 @@
 //   //     return Left(e.toString());
 //   //   }
 //   // }
-// }
+}

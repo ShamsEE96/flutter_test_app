@@ -1,3 +1,5 @@
+import 'package:flutter_template/core/utils/regular_ex_util.dart';
+
 extension CapExtension on String {
   String get removePrecisionIfZero =>
       this.isEmpty ? '' : this.replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "");
@@ -32,4 +34,6 @@ extension CapExtension on String {
   bool get isValidEmail => RegExp(
           r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
       .hasMatch(this);
+
+  bool get isValidWorkSpaceName => RegularEx.workspaceName.hasMatch(this);
 }

@@ -47,10 +47,13 @@ class CustomToasts {
                     child: Text(
                       message.inCaps,
                       textAlign: TextAlign.center,
+                      maxLines: 10,
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(
-                          height: 1.5,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600),
+                        height: 1.5,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ),

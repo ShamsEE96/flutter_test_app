@@ -20,10 +20,16 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: AppColors.transparentColor,
-      statusBarIconBrightness: Brightness.light,
-    ));
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        // statusBarBrightness: Brightness.light
+        systemNavigationBarColor: AppColors.transparentColor,
+        systemNavigationBarDividerColor: AppColors.transparentColor,
+        statusBarColor: AppColors.transparentColor,
+        statusBarIconBrightness: Brightness.dark,
+        systemNavigationBarIconBrightness: Brightness.dark,
+      ),
+    );
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
     return StreamProvider<ConnectivityStatus>(
@@ -39,7 +45,7 @@ class _AppState extends State<App> {
         fallbackLocale: languageService.getLocale(),
         builder: BotToastInit(),
         translations: AppTranslations(),
-        scrollBehavior: ScrollBehavior().copyWith(overscroll: false),
+        // scrollBehavior: ScrollBehavior().copyWith(overscroll: false),
         theme: ThemeData(
           fontFamily: 'Rubik',
           primaryColor: AppColors.orangeColor,

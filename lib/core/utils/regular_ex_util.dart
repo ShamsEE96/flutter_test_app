@@ -49,6 +49,8 @@ class RegularEx {
   static RegExp _textWithoutSpecialCharacter = new RegExp(
       '[a-zA-Z |0-9|\u0621-\u064A\u0660-\u0669|\dåäöÅÄÖ|\dğüşöçİĞÜŞÖÇ|\s ]');
 
+  static RegExp _workspaceName = RegExp(r'^[a-zA-Z][a-zA-Z0-9-_]+$');
+
   RegExp get ipv4Maybe => _ipv4Maybe;
 
   RegExp get halfWidth => _halfWidth;
@@ -80,6 +82,7 @@ class RegularEx {
   RegExp get numeric => _numeric;
 
   static RegExp get alphanumeric => _alphanumeric;
+  static RegExp get workspaceName => _workspaceName;
 
   RegExp get alpha => _alpha;
 

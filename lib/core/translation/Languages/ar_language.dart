@@ -58,10 +58,20 @@ class ARLanguage {
         "singup_view_password_strength_weak": "ضعيفة",
         "singup_view_password_strength_not_enough": "غير قوية بما فيه الكفاية!",
         "singup_view_password_strength_good": "آمنة إلى حد ما",
+        "login_singup_workspace_name": "اسم شركتك أو فريقك",
+        "login_singup_workspace_name_hint": "اسم مساحة العمل*",
+        "login_singup_workspace_name_avalaible_success": "اسم مساحة العمل متاح",
+        "login_singup_workspace_name_avalaible_error":
+            "اسم مساحة العمل مستخدم بالفعل",
         "login_singup_first_name": "اسمك الأول",
         "login_singup_first_name_hint": "أدخل اسمك الأول",
         "login_singup_last_name": "اسمك الأخير",
         "login_singup_last_name_hint": "أدخل اسمك الأخير",
+
+        "singup_view_password_validation_must_have":
+            "يجب أن تحتوي كلمات المرور على الأقل",
+        "singup_view_password_validation_characters_count": "حرفًا",
+        "singup_view_password_validation_uppercase": "حرف كبير واحد ('A'-'Z')",
 
         "singup_view_footer_line1": "من خلال تسجيل الدخول ، فإنك توافق",
         "singup_view_footer_line2_terms": "شروط الخدمة",

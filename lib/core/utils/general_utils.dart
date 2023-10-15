@@ -182,3 +182,7 @@ String getTodayDate() {
 DateFormat baseDateFormat = DateFormat('MM/dd/yyyy');
 
 int conatctCardId = 6;
+
+String get workspaceContinuation => ".workiom.com";
+
+String currentTimeZone = "";

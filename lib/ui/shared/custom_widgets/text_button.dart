@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/core/utils/general_utils.dart';
 import 'package:flutter_template/ui/shared/colors.dart';
+import 'package:flutter_template/ui/shared/custom_widgets/custom_text.dart';
 
 class CustomTextButton extends StatelessWidget {
   const CustomTextButton({
     Key? key,
     required this.title,
     this.textSize,
-    this.textColor = AppColors.primaryFontColor,
+    this.textColor = AppColors.uiTypographySecondaryColor,
     required this.onTap,
     this.fontWeight,
   }) : super(key: key);
@@ -24,14 +25,13 @@ class CustomTextButton extends StatelessWidget {
       onTap: () {
         onTap();
       },
-      child: Text(
-        title,
-        style: TextStyle(
-          decoration: TextDecoration.underline,
-          color: textColor,
-          fontSize: textSize ?? screenWidthPercent(25, context),
-          fontWeight: fontWeight,
-        ),
+      child: CustomText(
+        textType: TextStyleType.FOOTNOTE,
+        text: title,
+        textDecoration: TextDecoration.underline,
+        color: textColor,
+        fontSize: textSize ?? screenWidthPercent(25, context),
+        fontWeight: fontWeight,
       ),
     );
   }

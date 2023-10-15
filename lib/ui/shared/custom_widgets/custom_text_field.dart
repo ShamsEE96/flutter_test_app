@@ -118,7 +118,7 @@ class CustomTextField extends StatelessWidget {
                 TextStyle(
                   fontWeight: FontWeight.w400,
                   fontSize: screenHeightPercent(45, context),
-                  color: AppColors.placeholderFontColor,
+                  color: AppColors.uiTypographyPlaceholderColor,
                 ),
             prefixConstraint: prefixConstraint,
             validator: validator,

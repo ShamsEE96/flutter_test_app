@@ -59,10 +59,21 @@ class ENLanguage {
         "singup_view_password_strength_weak": "Weak",
         "singup_view_password_strength_not_enough": "Not strong enough!",
         "singup_view_password_strength_good": "Pretty safe",
+        "login_singup_workspace_name": "Your company or team name",
+        "login_singup_workspace_name_hint": "Workspace name*",
+        "login_singup_workspace_name_avalaible_success":
+            "Workspace Name is Available",
+        "login_singup_workspace_name_avalaible_error":
+            "Workspace Name is Already Taken",
         "login_singup_first_name": "Your first name",
         "login_singup_first_name_hint": "Enter your First name",
         "login_singup_last_name": "Your last name",
         "login_singup_last_name_hint": "Enter your Last name",
+
+        "singup_view_password_validation_must_have":
+            "Passwords must have at least",
+        "singup_view_password_validation_characters_count": "characters",
+        "singup_view_password_validation_uppercase": "one uppercase ('A'-'Z')",
 
         "singup_view_footer_line1": "By signing in, you agree",
         "singup_view_footer_line2_terms": "Terms of Service",

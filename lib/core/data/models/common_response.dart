@@ -12,7 +12,7 @@ class CommonResponse<T> {
       if (this.statusCode == 200 ||
           this.statusCode == 201 ||
           this.statusCode == 204) {
-        this.data = json['response'];
+        this.data = json['response']['result'];
         message = json['response']['message'];
         // this.data = json['response']['data'];
         // message = json['response']['message'];

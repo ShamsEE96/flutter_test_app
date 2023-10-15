@@ -146,7 +146,7 @@ class CustomTopContainer extends StatelessWidget {
                     ),
                     Expanded(
                       child: CustomText(
-                        textType: TextStyleType.TITLE,
+                        textType: TextStyleType.TITLE_2,
                         text: text ?? "",
                         color: AppColors.grey,
                       ),

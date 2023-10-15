@@ -100,7 +100,7 @@ class CustomApp extends StatelessWidget {
             CustomText(
               textType: TextStyleType.CUSTOM,
               text: name,
-              color: AppColors.primaryFontColor,
+              color: AppColors.uiTypographyPrimaryColor,
               fontSize: screenWidthPercent(40, context),
               fontWeight: FontWeight.w400,
             ),

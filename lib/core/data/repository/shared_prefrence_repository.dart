@@ -1,6 +1,8 @@
 import 'dart:convert';
 
+import 'package:flutter_template/core/data/models/apis/password_complexity_setting_model.dart';
 import 'package:flutter_template/core/data/models/apis/token_info.dart';
+import 'package:flutter_template/core/data/models/signup_info_model.dart';
 import 'package:flutter_template/core/enums/data_type.dart';
 import 'package:flutter_template/main.dart';
 
@@ -9,6 +11,8 @@ class SharedPreferencesRepository {
   static String PREF_LOGGED_IN = 'PREF_LOGGED_IN';
   static String PREF_APP_LANGUAGE = 'PREF_APP_LANGUAGE';
   static String PREF_TOKEN_INFO = 'token_info';
+  static String PREF_PASSWORD_COMPLEXITY_SETTING = 'password_setting';
+  static String PREF_SIGNUP_USER_INFO = 'signup_user_info';
   // static String PREF_USER_PROFILE = 'user_profile';
   // static String PREF_USER_PROFILE_NFC = 'user_profile_nfc';
 
@@ -88,22 +92,39 @@ class SharedPreferencesRepository {
     }
   }
 
-  // void setUserProfile(UserProfileModel value) {
-  //   setPrefrance(
-  //     dataType: DataType.STRING,
-  //     key: PREF_USER_PROFILE,
-  //     value: jsonEncode(value),
-  //   );
-  // }
+  void setPasswordComplexitySetting(PasswordComplexitySetting value) {
+    setPrefrance(
+      dataType: DataType.STRING,
+      key: PREF_PASSWORD_COMPLEXITY_SETTING,
+      value: jsonEncode(value),
+    );
+  }
 
-  // UserProfileModel? getUserProfile() {
-  //   if (globalSharedPrefs!.containsKey(PREF_USER_PROFILE)) {
-  //     return UserProfileModel.fromJson(
-  //         jsonDecode(getPrefrance(key: PREF_USER_PROFILE)));
-  //   } else {
-  //     return null;
-  //   }
-  // }
+  PasswordComplexitySetting? getPasswordComplexitySetting() {
+    if (globalSharedPrefs!.containsKey(PREF_PASSWORD_COMPLEXITY_SETTING)) {
+      return PasswordComplexitySetting.fromJson(
+          jsonDecode(getPrefrance(key: PREF_PASSWORD_COMPLEXITY_SETTING)));
+    } else {
+      return null;
+    }
+  }
+
+  void setSignupInfo(SignupInfoModel value) {
+    setPrefrance(
+      dataType: DataType.STRING,
+      key: PREF_SIGNUP_USER_INFO,
+      value: jsonEncode(value),
+    );
+  }
+
+  SignupInfoModel? getSignupInfo() {
+    if (globalSharedPrefs!.containsKey(PREF_SIGNUP_USER_INFO)) {
+      return SignupInfoModel.fromJson(
+          jsonDecode(getPrefrance(key: PREF_SIGNUP_USER_INFO)));
+    } else {
+      return null;
+    }
+  }
 
   // void setUserProfileFromNFC(UserProfileModel value) {
   //   setPrefrance(

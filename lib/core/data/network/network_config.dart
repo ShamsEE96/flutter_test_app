@@ -4,10 +4,10 @@ import 'package:flutter_template/core/utils/general_utils.dart';
 class NetworkConfig {
   static const String Auth_Bearer = "Bearer ";
 
-  static String BASE_API = '/api/v1/';
+  static String BASE_SERVICE_API = '/api/services/app/';
 
   static String getFullApiUrl(String api) {
-    return BASE_API + api;
+    return BASE_SERVICE_API + api;
   }
 
   static Map<String, String> getHeaders({

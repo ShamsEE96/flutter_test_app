@@ -9,7 +9,7 @@ import 'package:http_parser/http_parser.dart';
 import 'package:path/path.dart' as path;
 
 class NetworkUtil {
-  static String baseUrl = 'training.owner-tech.com';
+  static String baseUrl = 'api.workiom.site';
 
   static var client = http.Client();
   static bool online = true;
@@ -33,7 +33,7 @@ class NetworkUtil {
         return;
       }
 
-      var uri = Uri.https(baseUrl, url, params);
+      var uri = Uri.http(baseUrl, url, params);
       late http.Response response;
 
       Map<String, dynamic> jsonResponse = {};

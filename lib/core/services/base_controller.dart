@@ -1,4 +1,9 @@
 import 'package:bot_toast/bot_toast.dart';
+import 'package:flutter_template/core/data/repository/account_repository.dart';
+import 'package:flutter_template/core/data/repository/profile_repository.dart';
+import 'package:flutter_template/core/data/repository/session_repository.dart';
+import 'package:flutter_template/core/data/repository/tenant_registration_repository.dart';
+import 'package:flutter_template/core/data/repository/token_auth_repository.dart';
 import 'package:flutter_template/core/enums/connectivity_status.dart';
 import 'package:flutter_template/core/enums/operation_type_enum.dart';
 import 'package:flutter_template/core/enums/request_status_enum.dart';
@@ -7,6 +12,12 @@ import 'package:get/get.dart';
 
 class BaseController<T> extends GetxController {
   //UserRepository userRepository = Get.find<UserRepository>();
+  ProfileRepository profileRepository = Get.find<ProfileRepository>();
+  AccountRepository accountRepository = Get.find<AccountRepository>();
+  TenantRegistrationRepository tenantRegistrationRepository =
+      Get.find<TenantRegistrationRepository>();
+  TokenAuthRepository tokenAuthRepository = Get.find<TokenAuthRepository>();
+  SessionRepository sessionRepository = Get.find<SessionRepository>();
 
   bool get isOnline => connectivityStatus.value == ConnectivityStatus.ONLINE;
 
